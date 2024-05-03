@@ -43,6 +43,7 @@
             pictureBox4 = new PictureBox();
             Email = new Label();
             txtEmail = new TextBox();
+            btnRegister = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -55,7 +56,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Rockwell", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(461, 277);
+            button1.Location = new Point(363, 277);
             button1.Name = "button1";
             button1.Size = new Size(126, 48);
             button1.TabIndex = 0;
@@ -199,12 +200,27 @@
             txtEmail.TabIndex = 14;
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
+            // btnRegister
+            // 
+            btnRegister.BackColor = Color.DarkViolet;
+            btnRegister.Cursor = Cursors.Hand;
+            btnRegister.Font = new Font("Rockwell", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.ForeColor = SystemColors.ButtonHighlight;
+            btnRegister.Location = new Point(495, 277);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(126, 48);
+            btnRegister.TabIndex = 15;
+            btnRegister.Text = "Create";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Magenta;
             ClientSize = new Size(798, 404);
+            Controls.Add(btnRegister);
             Controls.Add(txtEmail);
             Controls.Add(Email);
             Controls.Add(pictureBox4);
@@ -246,5 +262,6 @@
         private PictureBox pictureBox4;
         private Label Email;
         private TextBox txtEmail;
+        private Button btnRegister;
     }
 }

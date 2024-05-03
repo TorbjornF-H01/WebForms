@@ -63,12 +63,53 @@ namespace WebForms
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Email_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPass.Text) || string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Please fill in all fields. Caveman!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SqlConnection con = new SqlConnection("Data Source=FROBIGBRAIN\\SQLEXPRESS;Initial Catalog=Loginapp;Integrated Security=True;TrustServerCertificate=True");
+            try
+            {
+                con.Open();
+                string query = "INSERT INTO loginapp (username, password, email) VALUES (@username, @password, @email)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", txtUser.Text);
+                    cmd.Parameters.AddWithValue("@password", txtPass.Text);
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("User registered successfully! Woooo", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registration failed. No user was added. Caveman!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to register user: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

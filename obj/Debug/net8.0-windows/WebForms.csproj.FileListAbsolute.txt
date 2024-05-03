@@ -60,3 +60,4 @@ C:\Users\torbj\source\repos\WebForms\bin\Debug\net8.0-windows\runtimes\win-x64\n
 C:\Users\torbj\source\repos\WebForms\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\torbj\source\repos\WebForms\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\Users\torbj\source\repos\WebForms\obj\Debug\net8.0-windows\WebForms.csproj.Up2Date
+C:\Users\torbj\source\repos\WebForms\obj\Debug\net8.0-windows\WebForms.sourcelink.json
